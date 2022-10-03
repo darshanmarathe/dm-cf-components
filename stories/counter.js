@@ -37,4 +37,4 @@ export default class Counter extends Component {
 }
 
 
-Tag('d-counter' , Counter)
+Tag('dm-counter' , Counter)

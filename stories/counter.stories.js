@@ -12,16 +12,16 @@ export default {
 
 
 export const Default = () => {
-    return html`<d-counter></d-counter>`
+    return html`<dm-counter></dm-counter>`
 }
 
 
 export const Properties = () => {
-  return html`<d-counter count="10"></d-counter>`
+  return html`<dm-counter count="10"></dm-counter>`
 }
 
 
 
 export const Event = () => {
-  return html`<d-counter @change=${(e) => {console.warn(e)}} count="5"></d-counter> <p>Check console.warn</p>`
+  return html`<dm-counter @change=${(e) => {console.warn(e)}} count="5"></dm-counter> <p>Check console.warn</p>`
 }
