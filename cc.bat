@@ -1,0 +1,1 @@
+touch stories %1.css %1.js %1.stories.js
