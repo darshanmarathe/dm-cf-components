@@ -14,3 +14,14 @@ export default {
 export const Default = () => {
     return html`<d-counter></d-counter>`
 }
+
+
+export const Properties = () => {
+  return html`<d-counter count="10"></d-counter>`
+}
+
+
+
+export const Event = () => {
+  return html`<d-counter @change=${(e) => {console.warn(e)}} count="5"></d-counter> <p>Check console.warn</p>`
+}
