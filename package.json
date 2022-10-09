@@ -20,9 +20,9 @@
     "@storybook/manager-webpack4": "^6.5.12",
     "@storybook/web-components": "^6.5.12",
     "babel-loader": "^8.2.5",
-    "lit-html": "^2.3.1"
+    "lit-html": "^2.4.0"
   },
   "dependencies": {
-    "componentforge": "^1.0.1"
+    "componentforge": "^1.1.5"
   }
 }
