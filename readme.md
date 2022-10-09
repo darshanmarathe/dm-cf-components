@@ -1,14 +1,16 @@
-#main command 
-
- npx sb@next init --builder vite --type vue3
+# DN-cf-components
 
 
- #others 
+## Powered by ComponentFoge (http://github.com/darshanmarathe/componentForge)
 
-npm install vite -D
-npm install @vitejs/plugin-vue -D
+ComponentForge is reactish web component lib 
+
+
+
+
+
 
 
 Deployed on 
 
-https://dm-vue-components.netlify.app/
+https://dm-cf-components.netlify.app/

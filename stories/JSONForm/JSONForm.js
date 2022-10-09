@@ -39,12 +39,14 @@ export default class JSONForm extends Component {
   }
  
   setUpEditor() {
-    console.log('setting up editor' , this.props, this.state.defaultOptions.startval);
-    if(this.state.defaultOptions.schema === undefined) return;
-    this.elementRef = this.root.querySelector("#jsonform");
     if (this.jsonEditor) {
       this.jsonEditor.destroy();
     }
+    console.log('setting up editor' , this.props, this.state.defaultOptions.startval);
+    if(this.state.defaultOptions.schema === undefined) return;
+    this.elementRef = this.root.querySelector("#jsonform");
+    this.elementRef.innerHTML = ''
+
     this.jsonEditor = new window.JSONEditor(
       this.elementRef,
       this.state.defaultOptions
@@ -53,7 +55,6 @@ export default class JSONForm extends Component {
       if (this.validate()) this.fireEvent("change", "value", this.jsonEditor.getValue());
     //  this.data = this.jsonEditor.getValue();
     });
-    const that  = this;
     this.jsonEditor.on("ready", () => {
       // Now the api methods will be available
       
