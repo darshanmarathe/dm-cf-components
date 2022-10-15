@@ -14,6 +14,8 @@ export default class AutoComplete extends Component {
             template: null,
             mincharAjax: 3,
             url: null,
+            inputClass: 'dm-textbox',
+            
 
 
         }
@@ -63,9 +65,11 @@ export default class AutoComplete extends Component {
         }
         /*execute a function when someone writes in the text field:*/
         inp.addEventListener("input", async function (e) {
-            console.log('fired')
+            e.preventDefault();
             var a, b, i, val = this.value;
-            that.fireEvent('input', 'value', val)
+            debugger;
+            if(val !== 0)
+                that.fireEvent('input', 'value', val)
             /*close any already open lists of autocompleted values*/
             if (that.props.url != null && that.props.mincharAjax <= val.length) {
                 if (that.isLoading === true) return;
@@ -172,7 +176,7 @@ export default class AutoComplete extends Component {
     Template() {
         return html`
           <div class="autocomplete" >
-    <input id="myInput" class="a-textbox a-textbox--30-character" type="text"  placeholder="${this.props.placeholder}" />
+    <input id="myInput" class="${this.props.inputClass}" type="text"  placeholder="${this.props.placeholder}" />
     </div>
         `
 
@@ -240,6 +244,13 @@ export default class AutoComplete extends Component {
     Style() {
         return html`
                 <style> 
+
+            .dm-textbox{
+
+                width:350px;
+                height:35px;
+                border:1px solid grey;
+            }
         
 .autocomplete {
   /*the container must be positioned relative:*/

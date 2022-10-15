@@ -258,7 +258,9 @@ export const Default = () => {
   );
 
   
-  return html`<dm-auto-complete
+  return html`
+      <p>Type "ind" and wait</p>
+  <dm-auto-complete
   .records=${data}
   textprop="name"
   keyprop="code"
@@ -272,7 +274,9 @@ export const AutoAjax = () => {
     );
   
     
-    return html`<dm-auto-complete url="https://jsonplaceholder.typicode.com/users"
+    return html`
+        <p>Type "clem" and wait</p>
+    <dm-auto-complete url="https://jsonplaceholder.typicode.com/users"
     .mincharAjax=${2}
    
     textprop="name"
@@ -289,7 +293,9 @@ export const AutoAjax = () => {
     );
   
     
-    return html`<dm-auto-complete url="https://jsonplaceholder.typicode.com/users"
+    return html`
+        <p>Type "clem" and wait</p>
+    <dm-auto-complete url="https://jsonplaceholder.typicode.com/users"
     .mincharAjax=${2}
    
     textprop="name"
@@ -309,7 +315,9 @@ export const AutoAjax = () => {
     );
   
     
-    return html`<dm-auto-complete url="https://jsonplaceholder.typicode.com/users"
+    return html`
+        <p>Type "clem" and wait</p>
+    <dm-auto-complete url="https://jsonplaceholder.typicode.com/users"
     .mincharAjax=${2}
    
     textprop="name"
@@ -319,6 +327,34 @@ export const AutoAjax = () => {
     texttemplate="{username} :{name}"
   
     ></dm-auto-complete>`;
+  };
+  
+
+
+
+  export const Events = () => {
+    console.warn(
+      "for documantion visit https://github.com/json-editor/json-editor"
+    );
+  let InputEvent  = "Input Event works at normal input";
+  let ChangeEvent ="Change Event Fires at selection"
+    
+    return html`
+    <p>Type "clem" and wait</p>
+    <dm-auto-complete url="https://jsonplaceholder.typicode.com/users"
+    .mincharAjax=${2}
+   
+    textprop="name"
+    keyprop="username"
+    placeholder="Users"
+    template="{username} - {name} <br> {company.name}"
+    texttemplate="{username} :{name}"
+
+  @change=${(e) => {console.warn("CHANGE:",e.detail)}}
+    ></dm-auto-complete><br>
+  <span>Check Console.warn for Change  event after selection happnens</span>
+
+    `;
   };
   
 
