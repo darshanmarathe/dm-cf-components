@@ -35,7 +35,7 @@ export default class AutoComplete extends Component {
 
             //Get Child
             const gc = (key, item) => {
-                debugger;
+              
                 let retItem = item;
                 const keys = key.split('.');
                 for (const _key of keys) {
@@ -67,7 +67,7 @@ export default class AutoComplete extends Component {
         inp.addEventListener("input", async function (e) {
             e.preventDefault();
             var a, b, i, val = this.value;
-            debugger;
+          
             if(val !== 0)
                 that.fireEvent('input', 'value', val)
             /*close any already open lists of autocompleted values*/
@@ -94,14 +94,14 @@ export default class AutoComplete extends Component {
                     /*create a DIV element for each matching element:*/
                     b = document.createElement("DIV");
                     /*make the matching letters bold:*/
-                    b.innerHTML = that.props.template != null ? template(arr[i], that.props.template) : "<strong>" + arr[i][that.props.textprop].substr(0, val.length) + "</strong>";
+                    b.innerHTML = that.props.template != null ? that.Tmpl(arr[i], that.props.template) : "<strong>" + arr[i][that.props.textprop].substr(0, val.length) + "</strong>";
                     if (that.props.template == null) {
 
                         b.innerHTML += arr[i][that.props.textprop].substr(val.length);
                     }
                     /*insert a input field that will hold the current array item's value:*/
                     b.innerHTML += "<input type='hidden' value='" + arr[i][that.props.keyprop] + "'>";
-                    b.innerHTML += "<input type='hidden' value='" + ((that.props.texttemplate != null) ? template(arr[i], that.props.texttemplate) : arr[i][that.props.textprop]) + "'>";
+                    b.innerHTML += "<input type='hidden' value='" + ((that.props.texttemplate != null) ? that.Tmpl(arr[i], that.props.texttemplate) : arr[i][that.props.textprop]) + "'>";
                     /*execute a function when someone clicks on the item value (DIV element):*/
                     b.addEventListener("click", function (e) {
                         /*insert the value for the autocomplete text field:*/
@@ -212,7 +212,7 @@ export default class AutoComplete extends Component {
     }
 
     get Value() {
-        debugger;
+      
         return this.root.querySelector('#myInput').dataset.key
     }
 

@@ -23,6 +23,6 @@
     "lit-html": "^2.4.0"
   },
   "dependencies": {
-    "componentforge": "^1.1.7"
+    "componentforge": "^1.1.10"
   }
 }
